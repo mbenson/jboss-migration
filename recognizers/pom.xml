@@ -45,7 +45,11 @@
     </profiles>
 
     <dependencies>
-        
+        <dependency>
+            <groupId>org.jboss.migr.as</groupId>
+            <artifactId>WindRide-engine</artifactId>
+        </dependency>
+
         <!-- Commons -->
         <dependency>
             <groupId>commons-lang</groupId>
