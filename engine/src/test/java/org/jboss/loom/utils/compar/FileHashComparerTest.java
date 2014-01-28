@@ -42,9 +42,9 @@ public class FileHashComparerTest {
         
         ComparisonResult results = FileHashComparer.compareHashesAndDir( hashes, dir, FileFilterUtils.trueFileFilter());
         
-        assertEquals( FileHashComparer.MatchResult.MATCH,    results.getMatches().get(PATH_ORACLE_DS) );
-        assertEquals( FileHashComparer.MatchResult.MISMATCH, results.getMatches().get(PATH_DATASOURCES) );
-        assertEquals( FileHashComparer.MatchResult.MISSING,  results.getMatches().get(PATH_NON_EXISTENT) );
+        assertEquals( FileHashComparer.MatchResult.MATCH,    results.getMatches().get(dir.toPath().normalize().relativize(PATH_ORACLE_DS)) );
+        assertEquals( FileHashComparer.MatchResult.MISMATCH, results.getMatches().get(dir.toPath().normalize().relativize(PATH_DATASOURCES)) );
+        assertEquals( FileHashComparer.MatchResult.MISSING,  results.getMatches().get(dir.toPath().normalize().relativize(PATH_NON_EXISTENT)) );
     }
 
 
